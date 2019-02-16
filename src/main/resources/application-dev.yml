@@ -1,0 +1,44 @@
+kafka:
+  connections:
+    ssl:
+      properties:
+        bootstrap.servers: "kafka:9093"
+        security.protocol: SSL
+        ssl.truststore.location: /home/ludo/Web/auchan/ode-kstream/.docker/app/.tmp/ssl/client/truststore.jks
+        ssl.truststore.password: eW8bkqRtVSDx8yyP
+        ssl.keystore.location: /home/ludo/Web/auchan/ode-kstream/.docker/app/.tmp/ssl/client/keystore.jks
+        ssl.keystore.password: eW8bkqRtVSDx8yyP
+        ssl.key.password: eW8bkqRtVSDx8yyP
+      registry: "http://schema-registry:8085"
+
+    plaintext:
+      properties:
+        bootstrap.servers: "kafka:9092"
+      registry: "http://schema-registry:8085"
+
+    test:
+      properties:
+        bootstrap.servers: "PLAINTEXT://localhost:46417,PLAINTEXT://localhost:36369,PLAINTEXT://localhost:40019"
+      registry: "http://0.0.0.0:41621"
+
+    aiven-uat:
+      properties:
+        bootstrap.servers: "kafka-uat-ari-ode.aivencloud.com:24523"
+        security.protocol: SSL
+        ssl.truststore.location: /home/ludo/Documents/Auchan/aiven/uat/avnadmin.truststore.jks
+        ssl.truststore.password: g59sphdlgf923syc
+        ssl.keystore.type: "PKCS12"
+        ssl.keystore.location: /home/ludo/Documents/Auchan/aiven/uat/avnadmin.keystore.p12
+        ssl.keystore.password: g59sphdlgf923syc
+        ssl.key.password: g59sphdlgf923syc
+
+    aiven-prd:
+      properties:
+        bootstrap.servers: "kafka-prd-ari-ode.aivencloud.com:24523"
+        security.protocol: SSL
+        ssl.truststore.location: /home/ludo/Documents/Auchan/aiven/prd/avnadmin.truststore.jks
+        ssl.truststore.password: jy30q56sylt9fz93
+        ssl.keystore.type: "PKCS12"
+        ssl.keystore.location: /home/ludo/Documents/Auchan/aiven/prd/avnadmin.keystore.p12
+        ssl.keystore.password: jy30q56sylt9fz93
+        ssl.key.password: jy30q56sylt9fz93
